@@ -32,9 +32,9 @@ class Machine:
                 self.progress = 0
 if __name__ == "__main__":
     materials = {}
-    def create_materials(materiasl: list): 
-        for i in materials:
-            memory_address_of_material = RawMaterial(i)
-            materials[i]= memory_address_of_materials
+    def create_materials(materials_list: list):
+        for mat_name in materials_list:  # itt a bemeneti listán megyünk végig!
+            material_obj = RawMaterial(mat_name)
+            materials[mat_name] = material_obj
         print(materials)
     create_materials(["egg", "water", "wheat"])
