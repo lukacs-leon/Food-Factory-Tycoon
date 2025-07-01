@@ -34,7 +34,7 @@ class Machine:
             self.current_recipe = recipe
             self.progress = 0
         else:
-            print(f"error! couldn't make this recipe ({self.current_recipe.name}) with this machine: {self.name} (type: {self.machine_type})")
+            print(f"error! couldn't make this recipe ({recipe.name}) with this machine: {self.name} (type: {self.machine_type})")
 
     def tick(self):
         if self.current_recipe is not None:
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         print(reciptes)
     machins = {}
     def create_machine(name: str):
-        machine = Machine(name, "oven")
+        machine = Machine(name, "turmix")
         machins[name] = machine
 
     create_materials(["egg", "water", "wheat"])
