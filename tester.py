@@ -71,6 +71,7 @@ if __name__ == "__main__":
     create_machine("oven1")
     oven1 = machins["oven1"]
     oven1.start_recipe(reciptes["bread"])
-    for key, value in machins:
-        value.tick()
-        print(f"{key} has ticked")
+    for i in range(5):
+        for key, value in machins.items():
+            value.tick()
+            print(f"{key} has ticked")
