@@ -1,48 +1,10 @@
-class RawMaterial:
-    def __init__(self, name):
-        self.name = name
-class Recipe:
-    def __init__(self, name, inputs, outputs, machine, time):
-        """
-        inputs: dict {RawMaterial: mennyiség}
-        outputs: dict {RawMaterial: mennyiség}
-        time: gyártási idő tickben vagy más egységben
-        """
-        self.name = name
-        self.inputs = inputs
-        self.outputs = outputs
-        self.machine = machine
-        self.time = time
-    def get_atributes(self):
-        atributes = {
-            "name": self.name,
-            "inputs": self.inputs,
-            "outputs": self.outputs,
-            "machine": self.machine,
-            "time": self.time
-        }
-        return
-class Machine:
-    def __init__(self, name, machine_type):
-        self.machine_type = machine_type
-        self.name = name
-        self.current_recipe = None
-        self.progress = 0
+import random
+import string
+# Import the Recipe, RawMaterial and Machine objects to test
+import Recipe as Recipe
+import RawMaterial as RawMaterial
+import Machine as Machine
 
-    def start_recipe(self, recipe):
-        if recipe.machine == self.machine_type:
-            self.current_recipe = recipe
-            self.progress = 0
-        else:
-            print(f"error! couldn't make this recipe ({recipe.name}) with this machine: {self.name} (type: {self.machine_type})")
-
-    def tick(self):
-        if self.current_recipe is not None:
-            self.progress += 1
-            if self.progress >= self.current_recipe.time:
-                print(f"{self.name} had made the {self.current_recipe.name}")
-                self.current_recipe = None
-                self.progress = 0
 if __name__ == "__main__":
     materials = {}
     def create_materials(materials_list: list):
@@ -65,12 +27,19 @@ if __name__ == "__main__":
     def create_machine(name: str):
         machine = Machine(name, "turmix")
         machins[name] = machine
-
+    ''' example calls of the full project
     create_materials(["egg", "water", "wheat"])
     create_reciptes([{"name": "bread", "inputs": ["egg", "water", "wheat"], "outputs": "bread", "machine": "oven", "time": 2}])
     create_machine("oven1")
     oven1 = machins["oven1"]
     oven1.start_recipe(reciptes["bread"])
+    '''
+    def generate_random_materials(n: int):
+        materials_list = ["egg", "wheat", "bread", "water", "honey", "pancake", "choclet powder"]
+        name = ''.join(random.sample(materials_list, k=n))
+        materials_list.append(name)
+        return materials_list
+    
     for i in range(5):
         for key, value in machins.items():
             value.tick()
