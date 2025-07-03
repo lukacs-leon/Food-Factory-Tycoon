@@ -4,6 +4,7 @@ class Machine:
         self.name = name
         self.current_recipe = None
         self.progress = 0
+        self.RawMaterials_list = []
 
     def start_recipe(self, recipe):
         if recipe.machine == self.machine_type:
@@ -11,6 +12,18 @@ class Machine:
             self.progress = 0
         else:
             print(f"error! couldn't make this recipe ({self.current_recipe.name}) with this machine: {self.name} (type: {self.machine_type})")
+    
+    def add_RawMaterial(self, RawMaterial: list):
+        for item in RawMaterial:
+            self.RawMaterials_list.append(item)
+    
+    def remove_RawMaterial(self, RawMaterail_to_remove: list):
+        for item in RawMaterail_to_remove:
+            try:
+                self.RawMaterials_list.remove(item)
+            except:
+                print(f"Something went wrong with this item when tried to remove: {item}")
+                exit()
 
     def tick(self):
         if self.current_recipe is not None:

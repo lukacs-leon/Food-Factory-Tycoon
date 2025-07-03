@@ -1,9 +1,9 @@
 class Recipe:
     def __init__(self, name, inputs, outputs, machine, time):
         """
-        inputs: dict {RawMaterial: mennyiség}
-        outputs: dict {RawMaterial: mennyiség}
-        time: gyártási idő tickben vagy más egységben
+        inputs: list [RawMaterial]
+        outputs: string "RawMaterial"
+        time: baking time in ticks
         """
         self.name = name
         self.inputs = inputs

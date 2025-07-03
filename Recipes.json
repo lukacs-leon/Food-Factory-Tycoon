@@ -1,0 +1,13 @@
+{
+    "Recipes":
+        {
+            "Pancake": 
+                {
+                    "name": "Pancake",
+                    "inputs": ["Wheat", "Egg", "Water"],
+                    "outputs": "Pancake",
+                    "machine": "Oven",
+                    "time": 2
+                }
+        }
+}
