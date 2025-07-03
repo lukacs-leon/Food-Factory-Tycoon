@@ -7,20 +7,44 @@ class Machine:
         self.RawMaterials_list = []
 
     def start_recipe(self, recipe):
-        if recipe.machine == self.machine_type:
+        can_start = True
+        for raw_material in recipe.RawMaterials:
+            for item in self.RawMaterials_list:
+                if item.name == raw_material.name and item.amount >= raw_material.amount:
+                    continue
+                else:
+                    can_start = False
+                    break
+        if not can_start:
+            print(f"error! {self.name} doesn't have enough raw materials to make this recipe ({recipe.name})")
+            return
+        elif recipe is not None and self.progress > 0:
+            print(f"error! {self.name} is already making {self.current_recipe.name} and can't start a new recipe until it's done.")
+        elif recipe.machine != self.machine_type:
+            print(f"error! {self.name} is not the right machine for this recipe ({recipe.name})")
+        else:
             self.current_recipe = recipe
             self.progress = 0
-        else:
-            print(f"error! couldn't make this recipe ({self.current_recipe.name}) with this machine: {self.name} (type: {self.machine_type})")
+            print(f"{self.name} has started making {self.current_recipe.name}")
     
-    def add_RawMaterial(self, RawMaterial: list):
-        for item in RawMaterial:
-            self.RawMaterials_list.append(item)
+    def add_RawMaterial(self, RawMaterial_to_add: list, amount: int = 1):
+        for item in RawMaterial_to_add:
+            for raw_material in self.RawMaterials_list:
+                if raw_material[0] == item:
+                    raw_material[2] += amount
+                    return
+                else:
+                    self.RawMaterials_list.append([item, amount])
     
-    def remove_RawMaterial(self, RawMaterail_to_remove: list):
+    def remove_RawMaterial(self, RawMaterail_to_remove: list, amount: int = 1):
         for item in RawMaterail_to_remove:
             try:
-                self.RawMaterials_list.remove(item)
+                raw_material_index = self.RawMaterials_list.index(item)
+                if self.RawMaterials_list[raw_material_index][2] >= amount:
+                    self.RawMaterials_list[raw_material_index][2] -= amount
+                if self.RawMaterials_list[raw_material_index][2] < amount:
+                    print(f"error! {self.name} doesn't have enough {item.name} to remove {amount} of it.")
+                    return
             except:
                 print(f"Something went wrong with this item when tried to remove: {item}")
                 exit()
