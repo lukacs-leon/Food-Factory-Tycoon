@@ -14,22 +14,24 @@ if __name__ == "__main__":
         print(materials)
     reciptes = {}
     def create_reciptes(reciptes_list: list):
-    for recipe_data in reciptes_list:
-        recipe = Recipe.Recipe(
-            recipe_data["name"],
-            recipe_data["inputs"],
-            recipe_data["outputs"],
-            recipe_data["machine"],
-            recipe_data["time"]
-        )
+        for recipe_data in reciptes_list:
+            print(recipe_data)
+            recipe_data = recipe_data["Pancake"]
+            recipe = Recipe.Recipe(
+                recipe_data["name"],
+                recipe_data["inputs"],
+                recipe_data["outputs"],
+                recipe_data["machine"],
+                recipe_data["time"]
+            )
         reciptes[recipe.name] = recipe
-    # print the reciptes dictionary to see if it works
-    print("Recipes created:")
-    for key, value in reciptes.items():
-        print(f"{key}: {value}")
+        # print the reciptes dictionary to see if it works
+        print("Recipes created:")
+        for key, value in reciptes.items():
+            print(f"{key}: {value}")
     machins = {}
     def create_machine(name: str):
-        machine = Machine(name, "turmix")
+        machine = Machine.Machine(name, "turmix")
         machins[name] = machine
     def generate_random_recipes(n: int):
         with open("Recipes.json", "r") as file:

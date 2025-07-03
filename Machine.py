@@ -8,7 +8,8 @@ class Machine:
 
     def start_recipe(self, recipe):
         can_start = True
-        for raw_material in recipe.RawMaterials:
+        print(recipe)
+        for raw_material in recipe.inputs:
             for item in self.RawMaterials_list:
                 if item.name == raw_material.name and item.amount >= raw_material.amount:
                     continue
@@ -32,9 +33,11 @@ class Machine:
             for raw_material in self.RawMaterials_list:
                 if raw_material[0] == item:
                     raw_material[2] += amount
+                    print(f"{self.name} has added {amount} of {item.name} to its raw materials list.")
                     return
                 else:
                     self.RawMaterials_list.append([item, amount])
+                    print(f"{self.name} has added {amount} of {item.name} to its raw materials list.")
     
     def remove_RawMaterial(self, RawMaterail_to_remove: list, amount: int = 1):
         for item in RawMaterail_to_remove:

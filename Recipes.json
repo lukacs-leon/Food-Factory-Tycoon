@@ -8,7 +8,7 @@
                         "Wheat": 1,
                         "Egg": 1,
                         "Water": 1},
-                    "outputs": {"Pancake", 1},
+                    "outputs": {"Pancake": 1},
                     "machine": "Oven",
                     "time": 2
                 }
