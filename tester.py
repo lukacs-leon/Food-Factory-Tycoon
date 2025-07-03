@@ -14,22 +14,19 @@ if __name__ == "__main__":
         print(materials)
     reciptes = {}
     def create_reciptes(reciptes_list: list):
-        for recipe_data in reciptes_list:
-            # recipe_data should be a dict with recipe details
-            recipe_data_key = recipe_data.keys()
-            recipe_data = recipe_data[recipe_data_key]
-            recipe = Recipe.Recipe(
-                recipe_data["name"],
-                recipe_data["inputs"],
-                recipe_data["outputs"],
-                recipe_data["machine"],
-                recipe_data["time"]
-            )
-            reciptes[recipe.name] = recipe
-        # print the reciptes dictionary to see if it works
-        print("Recipes created:")
-        for key, value in reciptes.items():
-            print(f"{key}: {value}")
+    for recipe_data in reciptes_list:
+        recipe = Recipe.Recipe(
+            recipe_data["name"],
+            recipe_data["inputs"],
+            recipe_data["outputs"],
+            recipe_data["machine"],
+            recipe_data["time"]
+        )
+        reciptes[recipe.name] = recipe
+    # print the reciptes dictionary to see if it works
+    print("Recipes created:")
+    for key, value in reciptes.items():
+        print(f"{key}: {value}")
     machins = {}
     def create_machine(name: str):
         machine = Machine(name, "turmix")
