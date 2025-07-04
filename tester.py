@@ -33,22 +33,31 @@ if __name__ == "__main__":
     def create_machine(name: str):
         machine = Machine.Machine(name, "Oven")
         machins[name] = machine
+    import json
     def generate_random_recipes(n: int):
+        # Open the JSON file and load its content
         with open("Recipes.json", "r") as file:
-            import json
-            recipes_data = json.load(file)
-        choosable_recipes_list = list(recipes_data.values())
-        # Check if n is greater than the number of available materials
-        if n > len(choosable_recipes_list):
-            print("n cannot be greater than the number of available materials.")
-            exit()
-        # Randomly select n materials from the materials_list
-        random.shuffle(choosable_recipes_list)
+            recipes_data = json.load(file)  # This is a list of dicts, each with a single recipe
+    
+        # Extract the values (actual recipe data) from each one-key dictionary
+        all_recipes = [list(recipe.values())[0] for recipe in recipes_data]
+    
+        # Check if the requested number exceeds available recipes
+        if n > len(all_recipes):
+            raise ValueError("n cannot be greater than the number of available recipes.")
+    
+        # Shuffle the list to randomize recipe selection
+        random.shuffle(all_recipes)
+    
         # Select the first n recipes from the shuffled list
-        print(f"Available recipes: {choosable_recipes_list}")
-        selected_recipes_list = choosable_recipes_list[:n]
-        print(f"Selected {n} random recipes: \n {selected_recipes_list}")
-        return selected_recipes_list
+        selected_recipes = all_recipes[:n]
+    
+        # Print selected recipe names
+        print(f"Selected {n} random recipes:")
+        for recipe in selected_recipes:
+            print(f"- {recipe['name']}")
+    
+        return selected_recipes
     def main(n: int = 5, rounds: int = 5):
         # Create materials
         create_materials(["Wheat", "Egg", "Water", "Sugar", "Milk"])
