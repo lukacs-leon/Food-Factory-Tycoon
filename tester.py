@@ -16,8 +16,9 @@ if __name__ == "__main__":
     reciptes = {}
     def create_reciptes(reciptes_list: list):
         for recipe_data in reciptes_list:
-            # print(recipe_data) for debugging
-            recipe_data = recipe_data["Pancake"]
+            # print(recipe_data) # for debugging
+            print(f"Recipe data: {recipe_data}")  # for debugging
+            # Create a Recipe object using the data
             recipe = Recipe.Recipe(
                 recipe_data["name"],
                 recipe_data["inputs"],
@@ -31,8 +32,8 @@ if __name__ == "__main__":
         for key, value in reciptes.items():
             print(f"{key}: {value}")
     machins = {}
-    def create_machine(name: str):
-        machine = Machine.Machine(name, "Oven")
+    def create_machine(name: str, type: str):
+        machine = Machine.Machine(name, type)
         machins[name] = machine
 
     def generate_random_recipes(n: int):
@@ -60,25 +61,36 @@ if __name__ == "__main__":
     
         return selected_recipes
     
-    def main(n: int = 5, rounds: int = 5):
-        # Create materials
-        create_materials(["Wheat", "Egg", "Water", "Sugar", "Milk"])
-        # Create recipes
-        create_reciptes(generate_random_recipes(n))
-        # Create machines
-        for i in range(n):
-            create_machine(f"Oven_{i+1}")
-        # Add raw materials to machines
-        for key, value in machins.items():
-            value.add_RawMaterial([materials["Wheat"], materials["Egg"], materials["Water"]], 5)
-            print(f"{key} has added raw materials")
+    def main(n: int = 5, rounds: int = 10):
+        materials_list = [] # e.g. ["flour", "sugar", "egg", "milk"]
+        # Create random recipes
+        random_recipes = generate_random_recipes(n)
         # Start recipes on machines
-        for key, value in machins.items():
-            value.start_recipe(reciptes["Pancake"])
-            print(f"{key} has started a recipe")
+        for counter in range(n):
+            # create materials to be used in recipes
+            test_materials_list = random_recipes[counter]["inputs"]
+            for material in test_materials_list:
+                if material not in materials_list:
+                    materials_list.append(material)
+        # Create materials
+        create_materials(materials_list)
+        # Create recipes
+        create_reciptes(random_recipes)
+        # Create machines to each recipe
+        for recipe in random_recipes:
+            # generate a machine for each recipe and checking the machins dictionary to avoid reuse of serial number
+            machine_type = recipe["machine"]
+            machine_name = machine_type
+            last_index_of_searching_type = 0
+            for i in range(len(machins)):
+                if list(machins.keys())[i].startswith(machine_type):
+                    last_index_of_searching_type = i-1
+                    machine_name = f"{machine_type}_{last_index_of_searching_type}"
+            if machins == {} or machine_name not in machins:
+                machine_name = f"{machine_type}_1"
+            create_machine(machine_name, machine_type)
         for i in range(rounds):
             for key, value in machins.items():
                 value.tick()
                 print(f"{key} has ticked")
-    main(1, 2)
-print
+    main(1, 10)
