@@ -5,10 +5,15 @@ class Machine:
         self.current_recipe = None
         self.progress = 0
         self.RawMaterials_list = []
+        print(f"{self.name} has been created with machine type {self.machine_type}")
 
     def start_recipe(self, recipe):
-        can_start = True
-        print(recipe)
+        if recipe is not None:
+            can_start = True
+            print(f"{self.name} is trying to start the recipe: {recipe.name}")
+        else:
+            print(f"error! {self.name} cannot start a recipe because the recipe is None.")
+            exit()
         for raw_material in recipe.inputs:
             for item in self.RawMaterials_list:
                 if item.name == raw_material.name and item.amount >= raw_material.amount:

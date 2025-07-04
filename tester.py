@@ -1,5 +1,5 @@
 import random
-import string
+
 # Import the Recipe, RawMaterial and Machine objects to test
 import Recipe as Recipe
 import RawMaterial as RawMaterial
@@ -11,11 +11,11 @@ if __name__ == "__main__":
         for mat_name in materials_list:
             material_obj = RawMaterial.RawMaterial(mat_name)
             materials[mat_name] = material_obj
-        print(materials)
+        # print(materials) for debugging
     reciptes = {}
     def create_reciptes(reciptes_list: list):
         for recipe_data in reciptes_list:
-            print(recipe_data)
+            # print(recipe_data) for debugging
             recipe_data = recipe_data["Pancake"]
             recipe = Recipe.Recipe(
                 recipe_data["name"],
@@ -31,7 +31,7 @@ if __name__ == "__main__":
             print(f"{key}: {value}")
     machins = {}
     def create_machine(name: str):
-        machine = Machine.Machine(name, "turmix")
+        machine = Machine.Machine(name, "Oven")
         machins[name] = machine
     def generate_random_recipes(n: int):
         with open("Recipes.json", "r") as file:
@@ -44,16 +44,18 @@ if __name__ == "__main__":
             exit()
         # Randomly select n materials from the materials_list
         random.shuffle(choosable_recipes_list)
+        # Select the first n recipes from the shuffled list
+        print(f"Available recipes: {choosable_recipes_list}")
         selected_recipes_list = choosable_recipes_list[:n]
         print(f"Selected {n} random recipes: \n {selected_recipes_list}")
         return selected_recipes_list
-    def main(n: int = 5):
+    def main(n: int = 5, rounds: int = 5):
         # Create materials
         create_materials(["Wheat", "Egg", "Water", "Sugar", "Milk"])
         # Create recipes
-        create_reciptes(generate_random_recipes(1))
+        create_reciptes(generate_random_recipes(n))
         # Create machines
-        for i in range(3):
+        for i in range(n):
             create_machine(f"Oven_{i+1}")
         # Add raw materials to machines
         for key, value in machins.items():
@@ -63,8 +65,9 @@ if __name__ == "__main__":
         for key, value in machins.items():
             value.start_recipe(reciptes["Pancake"])
             print(f"{key} has started a recipe")
-        for i in range(n):
+        for i in range(rounds):
             for key, value in machins.items():
                 value.tick()
                 print(f"{key} has ticked")
-    main(5)
+    main(1, 2)
+print
