@@ -1,4 +1,5 @@
 import random
+import json
 
 # Import the Recipe, RawMaterial and Machine objects to test
 import Recipe as Recipe
@@ -33,31 +34,32 @@ if __name__ == "__main__":
     def create_machine(name: str):
         machine = Machine.Machine(name, "Oven")
         machins[name] = machine
-    import json
+
     def generate_random_recipes(n: int):
-        # Open the JSON file and load its content
+        # Load recipe data from file
         with open("Recipes.json", "r") as file:
-            recipes_data = json.load(file)  # This is a list of dicts, each with a single recipe
+            data = json.load(file)
     
-        # Extract the values (actual recipe data) from each one-key dictionary
-        all_recipes = [list(recipe.values())[0] for recipe in recipes_data]
+        # Get the dictionary under the "Recipes" key
+        recipes_dict = data.get("Recipes", {})
     
-        # Check if the requested number exceeds available recipes
+        # Get the list of only the recipe values (we don't need the keys here)
+        all_recipes = list(recipes_dict.values())
+    
+        # Validate count
         if n > len(all_recipes):
-            raise ValueError("n cannot be greater than the number of available recipes.")
+            raise ValueError(f"Requested {n} recipes, but only {len(all_recipes)} available.")
     
-        # Shuffle the list to randomize recipe selection
+        # Shuffle and pick first n
         random.shuffle(all_recipes)
-    
-        # Select the first n recipes from the shuffled list
         selected_recipes = all_recipes[:n]
     
-        # Print selected recipe names
         print(f"Selected {n} random recipes:")
         for recipe in selected_recipes:
-            print(f"- {recipe['name']}")
+            print(f"- {recipe.get('name', 'Unnamed')}")
     
         return selected_recipes
+    
     def main(n: int = 5, rounds: int = 5):
         # Create materials
         create_materials(["Wheat", "Egg", "Water", "Sugar", "Milk"])
