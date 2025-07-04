@@ -82,15 +82,33 @@ if __name__ == "__main__":
             machine_type = recipe["machine"]
             machine_name = machine_type
             last_index_of_searching_type = 0
-            for i in range(len(machins)):
-                if list(machins.keys())[i].startswith(machine_type):
-                    last_index_of_searching_type = i-1
-                    machine_name = f"{machine_type}_{last_index_of_searching_type}"
-            if machins == {} or machine_name not in machins:
+            last_serial_number = 0
+            if machins != {}:
+                for i in range(len(machins)):
+                    if list(machins.keys())[i].startswith(machine_type):
+                        last_index_of_searching_type = i-1
+                        last_serial_number = int(list(machins.keys())[i].split("_")[-1])
+                machine_name = f"{machine_type}_{last_serial_number + 1}"
+            else:
                 machine_name = f"{machine_type}_1"
             create_machine(machine_name, machine_type)
+        # Add raw materials to machines
+        for key, value in machins.items():
+            print(f"key: {key} \n value: {value}")
+            for material_name, material_obj in materials.items():
+                value.add_RawMaterial([material_obj], 10)
+        # Start recipes on machines
+        for key, value in machins.items():
+            recipe_name = random.choice(list(reciptes.keys()))
+            recipe_obj = reciptes[recipe_name]
+            if value.start_recipe(recipe_obj):
+                print(f"{key} has started the recipe: {recipe_name}")
+            else:
+                print(f"{key} could not start the recipe: {recipe_name}")
+        # Simulate the machines ticking
+        print("Starting the simulation...")
         for i in range(rounds):
             for key, value in machins.items():
                 value.tick()
                 print(f"{key} has ticked")
-    main(1, 10)
+    main(5, 10)
