@@ -36,25 +36,20 @@ class Statistics():
         return max(machine_count, key=machine_count.get)
     
     def get_most_used_raw_materials(self, top=False, topelements=5, reverse=True):
-        # Dictionary to count raw material usage
         raw_material_count = {}
     
-        # Iterate over each recipe
+        # Loop through all recipe objects
         for recipe in self.recipes:
-            inputs = recipe.get("inputs", [])
-            for raw_mat in inputs:
-                name = raw_mat["name"]
-                amount = raw_mat["amount"]
+            # Get the input dictionary: {RawMaterial: amount}
+            for raw_material, amount in recipe.inputs.items():
+                name = raw_material.name
                 if name in raw_material_count:
                     raw_material_count[name] += amount
                 else:
                     raw_material_count[name] = amount
     
-        # Return sorted top materials or full dictionary
-        if top:
-            return sorted(raw_material_count.items(), key=lambda x: x[1], reverse=reverse)[:topelements]
-        else:
-            return raw_material_count
+        # Return either the sorted top N materials or the full dictionary
+        return sorted(raw_material_count.items(), key=lambda x: x[1], reverse=reverse)[:topelements] if top else raw_material_count
 if __name__ == "__main__":
     Statistics = Statistics("Recipes.json")
     print(f"total recipes: {Statistics.get_total_recipes()}")
