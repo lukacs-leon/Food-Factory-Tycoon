@@ -16,8 +16,7 @@ if __name__ == "__main__":
     reciptes = {}
     def create_reciptes(reciptes_list: list):
         for recipe_data in reciptes_list:
-            # print(recipe_data) # for debugging
-            print(f"Recipe data: {recipe_data}")  # for debugging
+            # print(f"Recipe data: {recipe_data}")  # for debugging
             # Create a Recipe object using the data
             recipe = Recipe.Recipe(
                 recipe_data["name"],
@@ -28,9 +27,10 @@ if __name__ == "__main__":
             )
         reciptes[recipe.name] = recipe
         # print the reciptes dictionary to see if it works
+        """ for debugging
         print("Recipes created:")
         for key, value in reciptes.items():
-            print(f"{key}: {value}")
+            print(f"{key}: {value}")"""
     machins = {}
     def create_machine(name: str, type: str):
         machine = Machine.Machine(name, type)
@@ -111,4 +111,4 @@ if __name__ == "__main__":
             for key, value in machins.items():
                 value.tick()
                 print(f"{key} has ticked")
-    main(5, 10)
+    main(1, 10)

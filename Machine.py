@@ -73,4 +73,10 @@ class Machine:
                 print(f"{self.name} had made the {self.current_recipe.name}")
                 self.current_recipe = None
                 self.progress = 0
-                return
+                return True
+            else:
+                print(f"{self.name} is making {self.current_recipe.name} and has made {self.progress} out of {self.current_recipe.time}")
+                return False
+        else:
+            print(f"{self.name} is not making anything right now.")
+            return False

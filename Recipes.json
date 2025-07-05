@@ -513,6 +513,42 @@
                     "outputs": {"Potato Casserole": 1},
                     "machine": "Oven",
                     "time": 5
+                },
+            "Vegetable Stir Fry": 
+                {
+                    "name": "Vegetable Stir Fry",
+                    "inputs": {
+                        "Vegetables": 3,
+                        "Soy Sauce": 1,
+                        "Oil": 1},
+                    "outputs": {"Vegetable Stir Fry": 1},
+                    "machine": "Wok",
+                    "time": 4
+                },
+            "Chicken Stir Fry": 
+                {
+                    "name": "Chicken Stir Fry",
+                    "inputs": {
+                        "Chicken": 2,
+                        "Vegetables": 2,
+                        "Soy Sauce": 1,
+                        "Oil": 1},
+                    "outputs": {"Chicken Stir Fry": 1},
+                    "machine": "Wok",
+                    "time": 5
+                },
+            "Beef Stir Fry": 
+                {
+                    "name": "Beef Stir Fry",
+                    "inputs": {
+                        "Beef": 2,
+                        "Vegetables": 2,
+                        "Soy Sauce": 1,
+                        "Oil": 1},
+                    "outputs": {"Beef Stir Fry": 1},
+                    "machine": "Wok",
+                    "time": 6
                 }
+            
         }
 }
