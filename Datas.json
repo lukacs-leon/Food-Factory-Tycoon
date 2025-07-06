@@ -1,0 +1,166 @@
+{
+    "Version": "1.3.9.3.1",
+    "LastEdited": "2025-07-06T16:51Z",
+    "Raw Materials":[
+        {
+            "Name": "Wheat",
+            "Price": 1,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Corn",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Rice",
+            "Price": 3,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Soybeans",
+            "Price": 1,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Barley",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Oats",
+            "Price": 5,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Potatoes",
+            "Price": 3,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Sugarcane",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Beetroot",
+            "Price": 3,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Carrots",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Tomatoes",
+            "Price": 4,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Onions",
+            "Price": 3,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Garlic",
+            "Price": 5,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Cabbage",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Lettuce",
+            "Price": 3,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Spinach",
+            "Price": 4,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Broccoli",
+            "Price": 5,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Cauliflower",
+            "Price": 6,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Bell Peppers",
+            "Price": 4,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Eggplant",
+            "Price": 5,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Oil",
+            "Price": 15,
+            "Unit of measure": "Spoon"
+        },
+        {
+            "Name": "Salt",
+            "Price": 1,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Pepper",
+            "Price": 2,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Spices",
+            "Price": 10,
+            "Unit of measure": "g"
+        },
+        {
+            "Name": "Herbs",
+            "Price": 5,
+            "Unit of measure": "leaf"
+        },
+        {
+            "Name": "Honey",
+            "Price": 20,
+            "Unit of measure": "Spoon"
+        },
+        {
+            "Name": "Water",
+            "Price": 1,
+            "Unit of measure": "L"
+        },
+        {
+            "Name": "Milk",
+            "Price": 2,
+            "Unit of measure": "L"
+        },
+        {
+            "Name": "Eggs",
+            "Price": 3,
+            "Unit of measure": "Dozen"
+        },
+        {
+            "Name": "Cheese",
+            "Price": 10,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Yogurt",
+            "Price": 5,
+            "Unit of measure": "Kg"
+        },
+        {
+            "Name": "Butter",
+            "Price": 8,
+            "Unit of measure": "Kg"
+        }
+    ]
+}

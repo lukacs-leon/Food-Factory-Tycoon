@@ -26,11 +26,6 @@ if __name__ == "__main__":
                 recipe_data["time"]
             )
         reciptes[recipe.name] = recipe
-        # print the reciptes dictionary to see if it works
-        """ for debugging
-        print("Recipes created:")
-        for key, value in reciptes.items():
-            print(f"{key}: {value}")"""
     machins = {}
     def create_machine(name: str, type: str):
         machine = Machine.Machine(name, type)
