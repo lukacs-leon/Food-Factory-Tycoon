@@ -5,7 +5,7 @@ import json
 class Statistics():
     def __init__(self, recipes_path):
         # Load recipes from the provided path
-        with open(recipes_path, 'r') as file:
+        with open(recipes_path, "r") as file:
             data = json.load(file)
         self.recipes = data.get("Recipes", [])
 

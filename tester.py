@@ -52,7 +52,7 @@ if __name__ == "__main__":
     
         print(f"Selected {n} random recipes:")
         for recipe in selected_recipes:
-            print(f"- {recipe.get('name', 'Unnamed')}")
+            print(f"- {recipe.get("name", "Unnamed")}")
     
         return selected_recipes
     
