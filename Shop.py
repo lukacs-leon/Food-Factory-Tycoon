@@ -28,17 +28,19 @@ class Shop():
         raw_materials = self.generate_raw_materials(5)
         for material in raw_materials:
             material_name = next(iter(material))
+            material_quantity = material[material_name]["Quantity"]
             if material_name not in self.AvailableProducts:
                 self.AvailableProducts[material_name] = {
-                    "Name": material[material_name]["Name"],
-                    "Quantity": material[material_name]["Quantity"],
+                    "Name": material_name,
+                    "Quantity": material_quantity,
                     "Price": material[material_name]["Price"]
                 }
             else:
-                self.AvailableProducts[material_name]["Quantity"] += material[material_name]["Quantity"]
-            if self.AvailableProducts[material_name]["Quantity"] <= 0:
-                del self.AvailableProducts[material_name]
-            print(f"Added {material[material_name]["Quantity"]} {material[material_name]["Name"]} at ${material[material_name]["Price"]} each.")
+                avaible_material_quantity = self.AvailableProducts["Quantity"]
+                avaible_material_quantity += material_quantity
+                if avaible_material_quantity <= 0:
+                    del self.AvailableProducts[material_name]
+            print(f"Added {material_quantity} {material_name} at ${material[material_name]["Price"]} each.")
 
         return raw_materials
     def buy_raw_materials(self, materials):
@@ -46,26 +48,32 @@ class Shop():
         print(f"Avaible: {self.AvailableProducts}")
         for material in materials:
             material_name = next(iter(material))
-            print(f"Actual material: {material} expected: {material[material_name]["Quantity"]}")
-            print(f"Test: {material[material_name]["Name"]}")
-            if material[material_name]["Quantity"] <= 0:
-                print(f"Cannot buy {material[material_name]["Name"]} with quantity {material[material_name]["Quantity"]}.")
-                can_buy[material[material_name]["Name"]] = False
+            material_name = material_name
+            material_quantity = material[material_name]["Quantity"]
+            if material_name in self.AvailableProducts:
+                avaible_material_quantity = self.AvailableProducts[material_name]["Quantity"]
+                material_price = self.AvailableProducts[material_name]["Price"]
+            print(f"Actual material: {material} expected: {material_quantity}")
+            print(f"Test: {material_name}")
+            # print(f"test 0: {material[material_name][0]}")
+            if material_quantity <= 0:
+                print(f"Cannot buy {material_name} with quantity {material_quantity}.")
+                can_buy[material_name] = False
                 continue
-            if material[material_name]["Name"] not in self.AvailableProducts:
-                print(f"{material[material_name]["Name"]} is not available in the shop.")
-                can_buy[material[material_name]["Name"]] = False
+            elif material_name not in self.AvailableProducts:
+                print(f"{material_name} is not available in the shop.")
+                can_buy[material_name] = False
                 continue
-            if self.AvailableProducts[material[material_name]["Name"]]["Quantity"] < material[material_name]["Quantity"]:
-                print(f"{material[material_name]["Name"]} is not available enough from {material[material_name]["Name"]} (excepted {material[material_name]["Quantity"]} but only {self.AvailableProducts[material[material_name]["Name"]["Quantity"]]} available) in the shop.")
-                can_buy[material[material_name]["Name"]] = False
+            elif avaible_material_quantity < material_quantity:
+                print(f"{material_name} is not available enough from {material_name} (excepted {material_quantity} but only {self.AvailableProducts[material_name]["Quantity"]} available) in the shop.")
+                can_buy[material_name] = False
                 continue
             else:
-                self.AvailableProducts[material[material_name]["Name"]]["Quantity"] -= material[material_name]["Quantity"]
-                if self.AvailableProducts[material[material_name]["Name"]]["Quantity"] <= 0:
-                    del self.AvailableProducts[material[material_name]["Name"]]
-                can_buy[material[material_name]["Name"]] = True
-                print(f"Buying {material[material_name]["Quantity"]} of {material[material_name]["Name"]} at ${self.AvailableProducts[material[material_name]["Name"]]["Price"]} price.")
+                avaible_material_quantity -= material_quantity
+                if avaible_material_quantity <= 0:
+                    del self.AvailableProducts[material_name]
+                can_buy[material_name] = True
+                print(f"Buying {material_quantity} of {material_name} at ${self.AvailableProducts[material_name]["Price"]} price.")
         total_cost = 0
         for material_name, can in can_buy.items():
             print(f"Materials: {materials}")
@@ -74,7 +82,8 @@ class Shop():
                 print(f"Cannot buy {material_name}.")
             else:
                 print(f"Successfully bought {material_name}.")
-                total_cost += self.AvailableProducts[material_name]["Price"] * materials[0][material_name]["Quantity"]
+                print(materials[0])
+                total_cost += self.AvailableProducts[material_name]["Price"] * material_quantity
         print(f"Total cost for buying raw materials: ${total_cost}")
         return total_cost
 if __name__ == "__main__":
