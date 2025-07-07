@@ -30,8 +30,8 @@ class Shop:
         sliced_materials = [{name: details} for name, details in selected_materials.items()]
         return sliced_materials
 
-    def add_raw_materials_to_inventory(self):
-        new_materials = self.generate_random_raw_materials(None)
+    def add_raw_materials_to_inventory(self, n=None):
+        new_materials = self.generate_random_raw_materials(n)
 
         for material in new_materials:
             name = next(iter(material))
@@ -93,7 +93,23 @@ class Shop:
         print(f"Total cost: ${total_cost}")
         return total_cost
     def tick(self): # here we'll generate new products and make other things
-        pass
+        print("Tick: Generating new products and updating inventory.")
+        new_products = self.generate_random_raw_materials(self.create_product_per_tick)
+        for product in new_products:
+            name = next(iter(product))
+            quantity = product[name]["Quantity"]
+            price = product[name]["Price"]
+
+            if name not in self.available_products:
+                self.available_products[name] = {
+                    "Name": name,
+                    "Quantity": quantity,
+                    "Price": price
+                }
+            else:
+                self.available_products[name]["Quantity"] += quantity
+
+            print(f"Generated {quantity} of {name} at ${price} each.")
 
 if __name__ == "__main__":
     shop = Shop(20)
