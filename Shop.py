@@ -2,16 +2,19 @@ import random
 import json
 
 class Shop:
-    def __init__(self):
+    def __init__(self, create_product_per_tick):
         self.data = self.load_data()
         self.raw_material_catalog = self.data["Raw Materials"]
         self.available_products = {}
+        self.create_product_per_tick = create_product_per_tick
 
     def load_data(self):
         with open("Datas.json", "r") as file:
             return json.load(file)
 
     def generate_random_raw_materials(self, n):
+        if n is None:
+            n = self.create_product_per_tick
         selected_materials = {}
         for _ in range(n):
             name = random.choice(list(self.raw_material_catalog.keys()))
@@ -28,7 +31,7 @@ class Shop:
         return sliced_materials
 
     def add_raw_materials_to_inventory(self):
-        new_materials = self.generate_random_raw_materials(5)
+        new_materials = self.generate_random_raw_materials(None)
 
         for material in new_materials:
             name = next(iter(material))
@@ -89,9 +92,11 @@ class Shop:
 
         print(f"Total cost: ${total_cost}")
         return total_cost
+    def tick(self): # here we'll generate new products and make other things
+        pass
 
 if __name__ == "__main__":
-    shop = Shop()
+    shop = Shop(20)
     shop.add_raw_materials_to_inventory()
     materials_to_buy = shop.generate_random_raw_materials(5)
     shop.buy_raw_materials(materials_to_buy)
