@@ -10,6 +10,7 @@ class Main():
     def __init__(self, rounds=100):
         self.shop = Shop(create_product_per_tick=5)
         self.statistics = Statistics("Recipes.json")
+        self.machines_data = {}
         self.machines = {}
         self.recipes = {}
         self.recipes_names = []
@@ -46,17 +47,16 @@ class Main():
             self.recipes[recipe.name] = recipe
             self.recipes_names.append(recipe.name)
         
-        # Load machines
-        print(data)
-        for machine_data in data["Machines"]:
-            machine = Machine(machine_data["name"], machine_data["type"])
-            self.machines[machine.name] = machine
+        # Load the machins
+        for machine_name, machine_data in data["Machines"].items():
+            self.machines_data[machine_name] = machine_data
         print("Data loaded successfully.")
+
     def create_machine_number(self, machine_type):
         if machine_type in self.machines:
             machine_name = f"{machine_type}_{len(self.machines[machine_type]) + 1}"
         else:
-            machine_name = f"{machine_type}_1"
+            machine_name = f"{machine_type}_1" 
         return self.create_machine(machine_name, machine_type)
     
     def create_machine(self, name, machine_type):
@@ -70,7 +70,7 @@ class Main():
             return True
 
     def run(self):
-        if self.rounds == 0:
+        if self.rounds <= 0:
             self.current_round = -1 # Infinite loop
         # print statistics
         print(f"Total recipes: {self.statistics.get_total_recipes()}")
@@ -81,11 +81,12 @@ class Main():
         for raw_material, amount in most_used_raw_materials:
             print(f"{raw_material}: {amount} times")
         while self.current_round < self.rounds:
-            self.current_round += 1
             print(f"Round {self.current_round + 1}/{self.rounds}")
+            self.current_round += 1
             # generate random recipes
-            recipes = random.choice(self.recipes_names, k=5)
-            self.current_recipes.append(recipes)
+            number = random.randint(1, 5)  # Randomly choose how many recipes to generate
+            recipes = random.sample(self.recipes_names, k=number)
+            self.current_recipes = recipes
             print(f"Current recipes: {self.current_recipes}")
             # Add raw materials to inventory
             for recipe_name in self.current_recipes:
@@ -94,6 +95,8 @@ class Main():
                 # Check if we have enough raw materials
                 enough_materials = True
                 for input_material, amount in recipe.inputs.items():
+                    print(f"input_material: {input_material}, amount: {amount}")
+                    print(f"raw_materials[input_material]: {self.raw_materials}")
                     if input_material not in self.raw_materials or self.raw_materials[input_material]["Quantity"] < amount:
                         enough_materials = False
                         print(f"Not enough {input_material} for {recipe.name}.")
