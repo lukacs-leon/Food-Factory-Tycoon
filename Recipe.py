@@ -1,5 +1,5 @@
 class Recipe:
-    def __init__(self, name, inputs, outputs, machine, time):
+    def __init__(self, name, inputs, outputs, machine, time, price=0, description="", category="", tags=None, link=""):
         """
         name:  string [name of the recipe]
         inputs: list [[RawMaterial, amount]]
@@ -12,3 +12,8 @@ class Recipe:
         self.outputs = outputs
         self.machine = machine
         self.time = time
+        self.price = price
+        self.description = description
+        self.category = category
+        self.tags = tags if tags is not None else []
+        self.link = link

@@ -37,8 +37,7 @@ class Statistics():
             return None
         most_common_machine = max(machine_count, key=machine_count.get)
         count = machine_count[most_common_machine]
-        print(f"The most commonly used machine is '{most_common_machine}' used {count} times.")
-        return most_common_machine
+        return (most_common_machine, count)
     
     def get_most_used_raw_materials(self, top=False, topelements=5, reverse=True):
         raw_material_count = {}
@@ -61,6 +60,9 @@ if __name__ == "__main__":
     print(f"total recipes: {Statistics.get_total_recipes()}")
     # print(f"recipe names: {Statistics.get_recipe_names()}")
     print(f"average time: {Statistics.get_average_time()}")
-    print(f"most common machine: {Statistics.get_most_common_machine()}")
+    print(f"most common machine: {Statistics.get_most_common_machine()[0]} used {Statistics.get_most_common_machine()[1]} times")
     # print(f"most used raw materials: {Statistics.get_most_used_raw_materials()}")
-    print(f"most used raw materials: {Statistics.get_most_used_raw_materials(top=True, topelements=10, reverse=True)}")
+    print(f"most used raw materials:")
+    most_used_raw_materials = Statistics.get_most_used_raw_materials(top=True, topelements=5, reverse=True)
+    for raw_material, amount in most_used_raw_materials:
+        print(f"{raw_material}: {amount} times")

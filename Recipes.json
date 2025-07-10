@@ -10,7 +10,12 @@
                         "Water": 1},
                     "outputs": {"Pancake": 1},
                     "machine": "Oven",
-                    "time": 2
+                    "time": 2,
+                    "price": 5,
+                    "description": "A delicious pancake made with wheat, egg, and water.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "sweet", "dessert"],
+                    "link": "//images/pancake.png"
                 },
             "Bread": 
                 {
@@ -20,7 +25,12 @@
                         "Water": 1},
                     "outputs": {"Bread": 1},
                     "machine": "Oven",
-                    "time": 3
+                    "time": 3,
+                    "price": 4,
+                    "description": "Freshly baked bread made from wheat and water.",
+                    "category": "Bakery",
+                    "tags": ["bakery", "staple", "savory"],
+                    "link": "//images/bread.png"
                 },
             "Cake": 
                 {
@@ -32,7 +42,12 @@
                         "Water": 1},
                     "outputs": {"Cake": 1},
                     "machine": "Oven",
-                    "time": 5
+                    "time": 5,
+                    "price": 10,
+                    "description": "A sweet cake.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "sweet", "celebration"],
+                    "link": "//images/cake.png"
                 },
             "Cookies": 
                 {
@@ -44,7 +59,12 @@
                         "Water": 1},
                     "outputs": {"Cookies": 1},
                     "machine": "Oven",
-                    "time": 4
+                    "time": 4,
+                    "price": 6,
+                    "description": "Crunchy cookies.",
+                    "category": "Snack",
+                    "tags": ["snack", "sweet", "dessert"],
+                    "link": "//images/cookies.png"
                 },
             "Pizza": 
                 {
@@ -56,7 +76,12 @@
                         "Water": 1},
                     "outputs": {"Pizza": 1},
                     "machine": "Oven",
-                    "time": 6
+                    "time": 6,
+                    "price": 12,
+                    "description": "A delicious pizza with cheese and tomato.",
+                    "category": "Main Course",
+                    "tags": ["main course", "savory", "italian"],
+                    "link": "//images/pizza.png"
                 },
             "Pasta": 
                 {
@@ -66,7 +91,12 @@
                         "Water": 1},
                     "outputs": {"Pasta": 1},
                     "machine": "Oven",
-                    "time": 3
+                    "time": 3,
+                    "price": 8,
+                    "description": "A Fresh really italian pasta.",
+                    "category": "Main Course",
+                    "tags": ["main course", "savory", "italian"],
+                    "link": "//images/pasta.png"
                 },
             "Hot Sandwich": 
                 {
@@ -78,7 +108,12 @@
                         "Cheese": 1},
                     "outputs": {"Sandwich": 1},
                     "machine": "Oven",
-                    "time": 4
+                    "time": 4,
+                    "price": 7,
+                    "description": "A hot sandwich with lettuce, tomato, and cheese.",
+                    "category": "Snack",
+                    "tags": ["snack", "savory", "sandwich"],
+                    "link": "//images/sandwich.png"
                 },
             "Salad": 
                 {
@@ -89,7 +124,12 @@
                         "Cucumber": 1},
                     "outputs": {"Salad": 1},
                     "machine": "Mixer",
-                    "time": 2
+                    "time": 2,
+                    "price": 5,
+                    "description": "A fresh salad. Perfect for diet or just a light meal.",
+                    "category": "Appetizer",
+                    "tags": ["appetizer", "healthy", "vegetarian"],
+                    "link": "//images/salad.png"
                 },
             "Smoothie": 
                 {
@@ -99,7 +139,12 @@
                         "Milk": 1},
                     "outputs": {"Smoothie": 1},
                     "machine": "Mixer",
-                    "time": 3
+                    "time": 3,
+                    "price": 6,
+                    "description": "A refreshing smoothie made with fruit and milk.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "healthy", "fruit"],
+                    "link": "//images/smoothie.png"
                 },
             "Ice Cream": 
                 {
@@ -110,7 +155,12 @@
                         "Fruit": 1},
                     "outputs": {"Ice Cream": 1},
                     "machine": "Mixer",
-                    "time": 4
+                    "time": 4,
+                    "price": 8,
+                    "description": "A creamy ice cream 4 kid.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "sweet", "frozen"],
+                    "link": "//images/icecream.png"
                 },
             "Fruit Juice": 
                 {
@@ -120,7 +170,12 @@
                         "Water": 1},
                     "outputs": {"Fruit Juice": 1},
                     "machine": "Mixer",
-                    "time": 2
+                    "time": 2,
+                    "price": 5,
+                    "description": "A refreshing fruit juice.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "healthy", "fruit", "juice"],
+                    "link": "//images/juice.png"
                 },
             "Cheese": 
                 {
@@ -130,7 +185,12 @@
                         "Rennet": 1},
                     "outputs": {"Cheese": 1},
                     "machine": "Cheese Maker",
-                    "time": 5
+                    "time": 5,
+                    "price": 10,
+                    "description": "A delicious cheese made from milk.",
+                    "category": "Dairy",
+                    "tags": ["dairy", "savory", "cheese"],
+                    "link": "//images/cheese.png"
                 },
             "Yogurt": 
                 {
@@ -140,7 +200,12 @@
                         "Culture": 1},
                     "outputs": {"Yogurt": 1},
                     "machine": "Yogurt Maker",
-                    "time": 4
+                    "time": 4,
+                    "price": 6,
+                    "description": "A healthy yogurt.",
+                    "category": "Dairy",
+                    "tags": ["dairy", "healthy", "breakfast"],
+                    "link": "//images/yogurt.png"
                 },
             "Butter": 
                 {
@@ -150,7 +215,12 @@
                         "Salt": 1},
                     "outputs": {"Butter": 1},
                     "machine": "Butter Maker",
-                    "time": 3
+                    "time": 3,
+                    "price": 5,
+                    "description": "A creamy butter. Perfect for spreading on bread.",
+                    "category": "Dairy",
+                    "tags": ["dairy", "spread", "savory"],
+                    "link": "//images/butter.png"
                 },
             "Chocolate": 
                 {
@@ -161,7 +231,12 @@
                         "Milk": 1},
                     "outputs": {"Chocolate": 1},
                     "machine": "Chocolate Maker",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A sweet chocolate. Great for desserts.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "sweet", "chocolate"],
+                    "link": "//images/chocolate.png"
                 },
             "Mushroom Soup": 
                 {
@@ -172,7 +247,12 @@
                         "Cream": 1},
                     "outputs": {"Mushroom Soup": 1},
                     "machine": "Cooker",
-                    "time": 4
+                    "time": 4,
+                    "price": 6,
+                    "description": "A creamy mushroom soup.",
+                    "category": "Soup",
+                    "tags": ["soup", "creamy", "vegetarian"],
+                    "link": "//images/mushroomsoup.png"
                 },
             "Vegetable Soup": 
                 {
@@ -183,7 +263,12 @@
                         "Water": 1},
                     "outputs": {"Vegetable Soup": 1},
                     "machine": "Cooker",
-                    "time": 3
+                    "time": 3,
+                    "price": 5,
+                    "description": "A healthy vegetable soup.",
+                    "category": "Soup",
+                    "tags": ["soup", "healthy", "vegetarian"],
+                    "link": "//images/vegetablesoup.png"
                 },
             "Chicken Soup": 
                 {
@@ -194,7 +279,12 @@
                         "Water": 1},
                     "outputs": {"Chicken Soup": 1},
                     "machine": "Cooker",
-                    "time": 5
+                    "time": 5,
+                    "price": 8,
+                    "description": "A hearty chicken soup.",
+                    "category": "Soup",
+                    "tags": ["soup", "hearty", "meat"],
+                    "link": "//images/chickensoup.png"
                 },
             "Lemonade": 
                 {
@@ -205,7 +295,12 @@
                         "Water": 1},
                     "outputs": {"Lemonade": 1},
                     "machine": "Juicer",
-                    "time": 3
+                    "time": 3,
+                    "price": 4,
+                    "description": "A refreshing lemonade.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "refreshing", "citrus"],
+                    "link": "//images/lemonade.png"
                 },
             "Coffee": 
                 {
@@ -215,7 +310,12 @@
                         "Water": 1},
                     "outputs": {"Coffee": 1},
                     "machine": "Coffee Maker",
-                    "time": 2
+                    "time": 2,
+                    "price": 3,
+                    "description": "A strong coffee made from freshly ground beans.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "caffeine", "hot drink"],
+                    "link": "//images/coffee.png"
                 },
             "Tea": 
                 {
@@ -225,7 +325,12 @@
                         "Water": 1},
                     "outputs": {"Tea": 1},
                     "machine": "kettle",
-                    "time": 2
+                    "time": 2,
+                    "price": 2,
+                    "description": "A soothing tea made from fresh leaves for the best quality.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "herbal", "hot drink"],
+                    "link": "//images/tea.png"
                 },
             "Soda": 
                 {
@@ -236,7 +341,12 @@
                         "Flavoring": 1},
                     "outputs": {"Soda": 1},
                     "machine": "Soda Maker",
-                    "time": 3
+                    "time": 3,
+                    "price": 4,
+                    "description": "A fizzy soda with a hint of flavor.",
+                    "category": "Beverage",
+                    "tags": ["beverage", "fizzy", "refreshing"],
+                    "link": "//images/soda.png"
                 },
             "Fruit Salad": 
                 {
@@ -246,7 +356,12 @@
                         "Honey": 1},
                     "outputs": {"Fruit Salad": 1},
                     "machine": "Mixer",
-                    "time": 4
+                    "time": 4,
+                    "price": 5,
+                    "description": "A refreshing fruit salad with a drizzle of honey.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "healthy", "fruit"],
+                    "link": "//images/fruitsalad.png"
                 },
             "Granola": 
                 {
@@ -257,7 +372,12 @@
                         "Nuts": 1},
                     "outputs": {"Granola": 1},
                     "machine": "Mixer",
-                    "time": 3
+                    "time": 3,
+                    "price": 6,
+                    "description": "A crunchy granola mix with oats, honey, and nuts.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "healthy", "snack"],
+                    "link": "//images/granola.png"
                 },
             "Cereal": 
                 {
@@ -268,7 +388,12 @@
                         "Sugar": 1},
                     "outputs": {"Cereal": 1},
                     "machine": "Mixer",
-                    "time": 3
+                    "time": 3,
+                    "price": 5,
+                    "description": "A quick and easy cereal, perfect with milk.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "quick", "cereal"],
+                    "link": "//images/cereal.png"
                 },
             "Pudding": 
                 {
@@ -279,7 +404,12 @@
                         "Cornstarch": 1},
                     "outputs": {"Pudding": 1},
                     "machine": "Mixer",
-                    "time": 4
+                    "time": 4,
+                    "price": 5,
+                    "description": "A creamy pudding.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "creamy", "sweet"],
+                    "link": "//images/pudding.png"
                 },
             "toast": 
                 {
@@ -289,7 +419,12 @@
                         "Butter": 1},
                     "outputs": {"Toast": 1},
                     "machine": "Toaster",
-                    "time": 2
+                    "time": 2,
+                    "price": 2,
+                    "description": "A fast crispy toast with butter.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "snack", "toast", "fast"],
+                    "link": "//images/toast.png"
                 },
             "French Fries": 
                 {
@@ -299,7 +434,12 @@
                         "Oil": 1},
                     "outputs": {"French Fries": 1},
                     "machine": "Fryer",
-                    "time": 3
+                    "time": 3,
+                    "price": 4,
+                    "description": "Crispy French fries made from fresh potatoes.",
+                    "category": "Snack",
+                    "tags": ["snack", "savory", "fried"],
+                    "link": "//images/frenchfries.png"
                 },
             "Fried Chicken": 
                 {
@@ -310,7 +450,12 @@
                         "Oil": 1},
                     "outputs": {"Fried Chicken": 1},
                     "machine": "Fryer",
-                    "time": 5
+                    "time": 5,
+                    "price": 10,
+                    "description": "Crispy fried chicken with a golden crust.",
+                    "category": "Main Course",
+                    "tags": ["main course", "fried", "meat"],
+                    "link": "//images/friedchicken.png"
                 },
             "Onion Rings": 
                 {
@@ -321,7 +466,12 @@
                         "Oil": 1},
                     "outputs": {"Onion Rings": 1},
                     "machine": "Fryer",
-                    "time": 4
+                    "time": 4,
+                    "price": 5,
+                    "description": "Crispy onion rings, perfect as a snack or side dish.",
+                    "category": "Snack",
+                    "tags": ["snack", "savory", "fried"],
+                    "link": "//images/onionrings.png"
                 },
             "Chips": 
                 {
@@ -332,7 +482,12 @@
                         "Salt": 1},
                     "outputs": {"Chips": 1},
                     "machine": "Fryer",
-                    "time": 3
+                    "time": 3,
+                    "price": 3,
+                    "description": "Crispy potato chips, perfect for snacking.",
+                    "category": "Snack",
+                    "tags": ["snack", "savory", "fried"],
+                    "link": "//images/chips.png"
                 },
             "Popcorn": 
                 {
@@ -343,7 +498,12 @@
                         "Salt": 1},
                     "outputs": {"Popcorn": 1},
                     "machine": "Popcorn Maker",
-                    "time": 2
+                    "time": 2,
+                    "price": 2,
+                    "description": "Light and fluffy popcorn, perfect for movie nights.",
+                    "category": "Snack",
+                    "tags": ["snack", "light", "movie night"],
+                    "link": "//images/popcorn.png"
                 },
             "British Breakfast": 
                 {
@@ -355,7 +515,12 @@
                         "Beans": 1},
                     "outputs": {"British Breakfast": 1},
                     "machine": "Cooker",
-                    "time": 6
+                    "time": 6,
+                    "price": 8,
+                    "description": "A hearty British breakfast with bacon, eggs, toast, and beans.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "hearty", "traditional"],
+                    "link": "//images/britishbreakfast.png"
                 },
             "Vegetarian Breakfast": 
                 {
@@ -368,7 +533,12 @@
                         "Tomato": 1},
                     "outputs": {"Vegetarian Breakfast": 1},
                     "machine": "Cooker",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A healthy vegetarian breakfast with eggs, toast, beans, mushroom, and tomato.",
+                    "category": "Breakfast",
+                    "tags": ["breakfast", "vegetarian", "healthy"],
+                    "link": "//images/vegetarianbreakfast.png"
                 },
             "Meatballs": 
                 {
@@ -380,7 +550,12 @@
                         "Spices": 1},
                     "outputs": {"Meatballs": 1},
                     "machine": "Cooker",
-                    "time": 4
+                    "time": 4,
+                    "price": 6,
+                    "description": "Juicy meatballs made with ground meat, breadcrumbs, and the besz quality spices.",
+                    "category": "Main Course",
+                    "tags": ["main course", "meat", "savory"],
+                    "link": "//images/meatballs.png"
                 },
             "Spaghetti": 
                 {
@@ -391,7 +566,12 @@
                         "Cheese": 1},
                     "outputs": {"Spaghetti": 1},
                     "machine": "Cooker",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A classic italian spaghetti dish with tomato sauce and cheese.",
+                    "category": "Main Course",
+                    "tags": ["main course", "italian", "pasta"],
+                    "link": "//images/spaghetti.png"
                 },
             "Tacos": 
                 {
@@ -404,7 +584,12 @@
                         "Cheese": 1},
                     "outputs": {"Tacos": 1},
                     "machine": "Cooker",
-                    "time": 6
+                    "time": 6,
+                    "price": 8,
+                    "description": "A delicious taco with ground meat, lettuce, tomato, and cheese.",
+                    "category": "Main Course",
+                    "tags": ["main course", "mexican", "savory"],
+                    "link": "//images/tacos.png"
                 },
             "Burrito": 
                 {
@@ -417,7 +602,12 @@
                         "Salsa": 1},
                     "outputs": {"Burrito": 1},
                     "machine": "Cooker",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A hearty burrito filled with rice, beans, cheese, and salsa.",
+                    "category": "Main Course",
+                    "tags": ["main course", "mexican", "savory"],
+                    "link": "//images/burrito.png"
                 },
             "Sushi": 
                 {
@@ -429,7 +619,12 @@
                         "Vegetables": 1},
                     "outputs": {"Sushi": 1},
                     "machine": "Sushi Maker",
-                    "time": 6
+                    "time": 6,
+                    "price": 10,
+                    "description": "A delicious sushi roll with rice, seaweed, fish, and vegetables.",
+                    "category": "Main Course",
+                    "tags": ["main course", "japanese", "savory"],
+                    "link": "//images/sushi.png"
                 },
             "Curry": 
                 {
@@ -441,7 +636,12 @@
                         "Meat": 1},
                     "outputs": {"Curry": 1},
                     "machine": "Cooker",
-                    "time": 7
+                    "time": 7,
+                    "price": 9,
+                    "description": "A flavorful curry with rice, vegetables, and meat.",
+                    "category": "Main Course",
+                    "tags": ["main course", "spicy", "indian"],
+                    "link": "//images/curry.png"
                 },
             "Fried Rice": 
                 {
@@ -453,7 +653,12 @@
                         "Soy Sauce": 1},
                     "outputs": {"Fried Rice": 1},
                     "machine": "Cooker",
-                    "time": 5
+                    "time": 5,
+                    "price": 6,
+                    "description": "A quick and easy fried rice with vegetables, egg, and soy sauce.",
+                    "category": "Main Course",
+                    "tags": ["main course", "quick", "asian"],
+                    "link": "//images/friedrice.png"
                 },
             "Lasagna": 
                 {
@@ -465,7 +670,12 @@
                         "Vegetables": 1},
                     "outputs": {"Lasagna": 1},
                     "machine": "Oven",
-                    "time": 8
+                    "time": 8,
+                    "price": 12,
+                    "description": "A layered lasagna with pasta, meat sauce, cheese, and vegetables.",
+                    "category": "Main Course",
+                    "tags": ["main course", "italian", "savory"],
+                    "link": "//images/lasagna.png"
                 },
             "Quiche": 
                 {
@@ -477,7 +687,12 @@
                         "Vegetables": 1},
                     "outputs": {"Quiche": 1},
                     "machine": "Oven",
-                    "time": 6
+                    "time": 6,
+                    "price": 8,
+                    "description": "A savory quiche with a pie crust, eggs, cheese, and vegetables.",
+                    "category": "Main Course",
+                    "tags": ["main course", "savory", "french"],
+                    "link": "//images/quiche.png"
                 },
             "Pie": 
                 {
@@ -488,7 +703,12 @@
                         "Sugar": 1},
                     "outputs": {"Pie": 1},
                     "machine": "Oven",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A sweet pie with a pie crust, fruit, and sugar.",
+                    "category": "Dessert",
+                    "tags": ["dessert", "sweet", "baked", "in tales"],
+                    "link": "//images/pie.png"
                 },
             "Cauliflower Casserole": 
                 {
@@ -500,7 +720,12 @@
                         "Milk": 1},
                     "outputs": {"Cauliflower Casserole": 1},
                     "machine": "Oven",
-                    "time": 6
+                    "time": 6,
+                    "price": 8,
+                    "description": "A creamy cauliflower casserole with cheese and breadcrumbs.",
+                    "category": "Main Course",
+                    "tags": ["main course", "vegetarian", "casserole", "hungarian"],
+                    "link": "//images/cauliflowercasserole.png"
                 },
             "Potato Casserole" : 
                 {
@@ -512,7 +737,12 @@
                         "Breadcrumbs": 1},
                     "outputs": {"Potato Casserole": 1},
                     "machine": "Oven",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A creamy potato casserole with cheese and breadcrumbs.",
+                    "category": "Main Course",
+                    "tags": ["main course", "vegetarian", "casserole", "hungarian"],
+                    "link": "//images/potatocasserole.png"
                 },
             "Vegetable Stir Fry": 
                 {
@@ -523,7 +753,12 @@
                         "Oil": 1},
                     "outputs": {"Vegetable Stir Fry": 1},
                     "machine": "Wok",
-                    "time": 4
+                    "time": 4,
+                    "price": 5,
+                    "description": "A quick and healthy vegetable stir fry with soy sauce.",
+                    "category": "Main Course",
+                    "tags": ["main course", "healthy", "asian"],
+                    "link": "//images/vegetablestirfry.png"
                 },
             "Chicken Stir Fry": 
                 {
@@ -535,7 +770,12 @@
                         "Oil": 1},
                     "outputs": {"Chicken Stir Fry": 1},
                     "machine": "Wok",
-                    "time": 5
+                    "time": 5,
+                    "price": 7,
+                    "description": "A quick and easy chicken stir fry with vegetables and soy sauce.",
+                    "category": "Main Course",
+                    "tags": ["main course", "quick", "asian"],
+                    "link": "//images/chickenstirfry.png"
                 },
             "Beef Stir Fry": 
                 {
@@ -547,8 +787,47 @@
                         "Oil": 1},
                     "outputs": {"Beef Stir Fry": 1},
                     "machine": "Wok",
-                    "time": 6
-                }
-            
+                    "time": 6,
+                    "price": 8,
+                    "description": "A flavorful beef stir fry with vegetables and soy sauce.",
+                    "category": "Main Course",
+                    "tags": ["main course", "savory", "asian"],
+                    "link": "//images/beefstirfry.png"
+                },
+            "Quinoa Salad": 
+                {
+                    "name": "Quinoa Salad",
+                    "inputs": {
+                        "Quinoa": 2,
+                        "Vegetables": 2,
+                        "Lemon Juice": 1,
+                        "Olive Oil": 1},
+                    "outputs": {"Quinoa Salad": 1},
+                    "machine": "Mixer",
+                    "time": 4,
+                    "price": 6,
+                    "description": "A healthy quinoa salad with fresh vegetables and a lemon dressing.",
+                    "category": "Salad",
+                    "tags": ["salad", "healthy", "vegetarian"],
+                    "link": "//images/quinoasalad.png"
+                },
+            "Greek Salad": 
+                {
+                    "name": "Greek Salad",
+                    "inputs": {
+                        "Tomato": 2,
+                        "Cucumber": 1,
+                        "Olives": 1,
+                        "Feta Cheese": 1,
+                        "Olive Oil": 1},
+                    "outputs": {"Greek Salad": 1},
+                    "machine": "Mixer",
+                    "time": 3,
+                    "price": 5,
+                    "description": "A refreshing Greek salad with tomatoes, cucumbers, olives, and feta cheese.",
+                    "category": "Salad",
+                    "tags": ["salad", "healthy", "greek"],
+                    "link": "//images/greeksalad.png"
+                }          
         }
 }

@@ -1,6 +1,6 @@
 {
-    "Version": "1.3.9.3.4",
-    "LastEdited": "2025-07-07T16:05Z",
+    "Version": "1.3.9.6",
+    "LastEdited": "2025-07-07T19:10Z",
     "Raw Materials":{
         "Wheat": {
             "Name": "Wheat",
@@ -161,6 +161,44 @@
             "Name": "Butter",
             "Price": 8,
             "Unit of measure": "Kg"
+        }
+    },
+    "Machines": {
+        "Mixer": {
+            "name": "Mixer",
+            "type": "Mixer",
+            "Consumption": 5,
+            "Consumption Unit": "kWh"
+        },
+        "Oven": {
+            "name": "Oven",
+            "type": "Oven",
+            "Consumption": 10,
+            "Consumption Unit": "kWh"
+        },
+        "Fryer": {
+            "name": "Fryer",
+            "type": "Fryer",
+            "Consumption": 15,
+            "Consumption Unit": "kWh"
+        },
+        "Grill": {
+            "name": "Grill",
+            "type": "Grill",
+            "Consumption": 12,
+            "Consumption Unit": "Coal"
+        },
+        "Boiler": {
+            "name": "Boiler",
+            "type": "Boiler",
+            "Consumption": 20,
+            "Consumption Unit": "kWh"
+        },
+        "Chopper": {
+            "name": "Chopper",
+            "type": "Chopper",
+            "Consumption": 8,
+            "Consumption Unit": "kWh"
         }
     }
 }

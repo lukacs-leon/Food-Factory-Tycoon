@@ -5,6 +5,7 @@ class Machine:
         self.current_recipe = None
         self.progress = 0
         self.RawMaterials_list = []
+        self.working = False
         print(f"{self.name} has been created with type {self.machine_type}")
 
     def start_recipe(self, recipe):
@@ -33,6 +34,7 @@ class Machine:
         else:
             self.current_recipe = recipe
             self.progress = 0
+            self.working = True
             print(f"{self.name} has started making {self.current_recipe.name}")
             return True
     
